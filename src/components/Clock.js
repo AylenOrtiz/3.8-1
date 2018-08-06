@@ -1,6 +1,9 @@
 import React from "react";
 
 class Clock extends React.Component {
+  componentDidMount() {
+    this.intervalo = setInterval(this.updateClock, 1000);
+  }
   constructor(props) {
     super(props);
     this.state = {
@@ -10,7 +13,6 @@ class Clock extends React.Component {
       time: ""
     };
     this.updateClock = this.updateClock.bind(this);
-    this.intervalo = setInterval(this.updateClock, 1000);
   }
 
   updateClock() {
